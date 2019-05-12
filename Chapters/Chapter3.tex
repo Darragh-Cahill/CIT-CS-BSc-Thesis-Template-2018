@@ -1,41 +1,39 @@
-\chapter{Problem - rename to project title}
+\chapter{Problem - GlobalSight User Management System}
 \label{chap:problem}
 \lhead{\emph{Problem Statement}}
-The key question to be addressed in this chapter is: "What do I want to achieve".
-
-This chapter should comprise around 1500 words and describe the problem you are trying to solve. Try to be as specific here as you can, this will help you to anticipate possible risks such as lack of support from APIs.
 
 \section{Problem Definition}
-Describe the problem you are trying to solve in this project. There will sometimes be a need at some point during the report to display an equation that may be core to your project. For example if the project is on gait detection what equation are you using to determine gait? If the project is on localization what is the method/formula? The formatting of these is reliably done in Latex also as we can see in equation \ref{eq:Legrange}.
+GlobalSight is a Globalization Management System. It contains a translation management system, and a complimentary work-flow management system. It’s the primary tool for getting McAfee productions, documentation, and websites translated. McAfee translate into over 60 languages, and variants. GlobalSight is also used as a LDAP substitute for other internal systems, where integration with Active Directory is not possible, or desired.
 
-\begin{equation}
-\frac{d}{dt}(\frac{\partial L}{\partial \dot{c_i}})-\frac{\partial L}{\partial c_i}+\frac{\partial P}{\partial \dot{c_i}} = F_i,
-\label{eq:Legrange}
-\end{equation}
+Multiple servers are used to share load, and to ensure segregation of business content streams. McAfee also have separate development and staging/UAT environments. There are currently twelve separate servers in use. Production server, at least, of each content stream is externally facing, and is accessed by translators worldwide, to complete their translation work.
+
+At present, more than 1500 unique active users on the system, between translators and internal users. Each user is on each of the 12+ servers. When a user is created, or their password
+updated, that change needs to be replicated to each server.
+
+It currently takes about 25 minutes to change 1 password, and about 30 minutes to create a single use on all systems.
 
 
 \section{Objectives}
-Enumerate the objectives you want to achieve in your project. Again as this is an early stage these will tend to change but there should be a rational explanation for this change. Always document your work, keep a lab book during the term that you only use for FYP!
+To create a web portal application that will allow easy management of user in the GlobalSight environment.  GlobalSight has a published API set, which includes API’s to manage users, which should be used by the application.
+
+The application should have the ability to adjust dynamically as more servers are added to the cluster, and where some are removed/decommissioned. 
+
+The application will be safe from a security point of view, having so many users data protection is key. Mcafees' own security team will be running regular checks for vulnerabilities in the system.
 
 \section{Functional Requirements}
-Enumerate the functional requirements you want your project to have. 
+The application will have the ability to differentiate between a normal user and an administrators. Administrators should have the ability to which users can log in to the system and disable a user's log in if required. Administrators will also have the ability to manage the server list.
 
-Please, do not include the use cases here. If you want to create a one-to-one mapping between functional requirements and use cases (which does not necessarily need to be the case, indeed most likely this will not be the case) do it elsewhere. Here should purely describe what do you want to do. In no case should you use this section to provide a description of how to implement them, that is for later. For people doing projects that are not heavy implementation projects (e.g. deploying an architecture or testing a novel tool in specific conditions) this structure can still be used as it will force you to think about what you plan to achieve and what possible metrics you may need to measure success.
+The application be able to define server groups, so users can group the production, development and UAT servers of a content stream together. A server can only exist in one group. This includes the main server, it’s details are not stored in the database, but it’s assignable to a group. A server must be part of a group, but a group can contain one server. There’s no limit to the number of servers in a group. A group can have zero members, and not show in the UI for app users, but still exist. It should be possible to delete or make inactive a group. Deleting a group removes it from the database, while machining active just removes sets an “inactive” flag in the database. There’s no need for a UI to show inactive servers, not is there a need for functionality to make them active again. That can be done via database directly. A group cannot be deleted or made inactive, if it still has members. 
 
-Let me explain this with more detail. A common mistake is that people confuse the problem description with the solution approach. This is a common mistake by confusing the \emph{what} with the \emph{how}. Here we are purely focused on the what: What is this project about? What are the objectives? What are the functional and non-functional requirements? 
+\pagebreak
 
-How are we going to do all these things? Well, this is a question for next chapter. Provided a problem, an objective or a functional requirement, obviously there will usually be many ways of doing it, thus there will be many \emph{hows}, but the definition, the \emph{what} we want to achieve will be unique.
-
-One other display structure you may wish to use at some stage during the report is a figure array. This can also be easily done with Latex and is shown in figure \ref{fig:twosuccesskid}
-
-\begin{figure}
-\centering     %%% not \center
-\subfigure[Figure A]{\label{fig:a}\includegraphics[width=0.48\textwidth]{successkid.jpg}}
-\subfigure[Figure B]{\label{fig:b}\includegraphics[width=0.48\textwidth]{successkid.jpg}}
-\caption{Two Success kids}
-\label{fig:twosuccesskid}
-\end{figure}
 
 \section{Non-Functional Requirements}
-Enumerate the non-functional requirements you want to achieve in your project (i.e. broadly speaking how your system will operate).
+The UI for will be minimalistic, allowing for users to easily traverse the application in the most efficient way.  
+All content such as strings, images and colours will be externalized to separate files to allow for the application to be fully translated in future. 
+
+The application will be reliable, users cannot access their accounts and the application is down for some reason that could potentially leave workers with no ability to actually achieve their work.
+
+
+
 

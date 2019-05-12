@@ -1,15 +1,44 @@
 \chapter{Introduction}
 \label{chap:intro}
 \lhead{\emph{Introduction}}
-This chapter should comprise around 1000 words and introduces your project. Here you are setting the scene, remember the reader may know nothing about your project at this stage (other than the abstract). N.B. The sections outlined in this document are suggested, some projects will have a greater or lesser emphasis on different sections or may change titles and some will have to add other sections to provide context or detail.
+%This chapter should comprise around 1000 words and introduces your project. Here you are setting the scene, remember the reader may know nothing about your project at this stage (other than the abstract). N.B. The sections outlined in this document are suggested, some projects will have a greater or lesser emphasis on different sections or may change titles and some will have to add other sections to provide context or detail.
 % Putting in comments within the TeX file can be really useful in making notes for yourself and dumping text that you intend to edit later
 
 \section{Motivation}
-Why is it important to do a project on this topic? This should cover your key motivation for this. For example an excellent student from 2016 noticed a large number of homeless sleeping rough in Cork and was motivated to develop a system that load balanced the homeless shelters to try to accommodate the maximum number of homeless. This section can include the personal pronoun but the rest of the report should be third person passive, this is the case with most technical reports! For example here it is fine to say "... I decided to develop and app to help ...".
+My motivation for this project originated from my time on placement in McAfee. I was an intern Software developer on the Globalization Platform Development team. During my time I worked on numerous projects that are used throughout the company. 
+
+Every so often our team would get emails from users saying they forgot their password, they can’t sign in or that an account needs to be created for them. These issues always went to a certain colleague and from speaking to him around the office I gathered it took way too long to solve these issues and that the process could be severely optimized.  Being such a busy company with a larger number of users these issues can waste valuable time which could be spent of more important problems. 
+
+McAfee was also a fantastic place to work so I wanted to help out in any way I could, and this was a prime opportunity to do so.
+
 
 \section{Contribution}
-Enumerate the main contributions. Here try to zoom out, to talk from the perspective of a Computer Science graduate. In other words, imagine you are talking to a job panel, and you want to show your computer science skills by enumerating how they are reflected in your project work. A good guide here is to look back over the modules you have covered as an undergrad from 2/3rd year, how many tools and techniques from these modules do you have in the project and to what extent? How have you advanced beyond the module content? Do you have anything new?
+In this project I will be using many programming techniques. One important technique I will be implementing is the use of libraries and making my own libraries. This is a vital piece of the project as code needs to be reusable and interchangeable, when done correctly and as generic as possible libraries make this doable. 
 
+ Another key programming technique is internationalization, the project being for a global company it must be useable in all languages. This can be achieved by not hard coding any strings, pictures, logos etc. All strings and such are kept in a single file and called when needed, the base English file can then be translated into another other language easily and cost effective.
+ 
+This brings me to UI/UX design. I have complete control over this side of my project and user experience will be my main focus. I think it’s essential for users to get to their end goal in as little effort as possible while being aesthetically appealing. To do this I will be using HTML5 and CSS. 
+
+Project management is another key aspect to this, being such a large project taking up so much time it needs to be managed correctly from the start. One way I will be managing my project is by having 3 different main git branches, production, QA and development. 
+
+This brings me to the QA bit of the project as putting so much effort into something you would want a quality product at the end. Having these 3 branches makes this possible. When I think I’m done with a certain aspect of development I will be merging the development and QA branches. Then a QA team will be testing my project to ensure there are no defects and everything is working how it should be.
+
+The leads me to early defect detection. This again is a vital bit to any project. A simple typo in your code could potentially break certain aspects and make them not work correctly which if not fixed could snowball and make the problem a lot worse than it needed to be. Using three different environments makes this possible as all a developer needs to do is tell the QA team what they have worked on and what it should do, and they will make sure of that. This lets the developer focus on developing and the QA team focus on finding defects. 
+
+The final and probably most important part of my project is communication. Communicating with the client, gathering spec, updating the job status and just letting them know how everything is going. Communication is the most important bit to any project as functional requirements need to be clear and concise for both developer and client, so everyone can have a clear time frame on how long certain parts should take. 
+
+\newpage
 \section{Structure of This Document}
 % notice how I cross referenced the chapters through using the \label tag --> LaTeX is VERY similar to HTML and other mark up languages so you should see nothing new here!
-This section is quite formulaic. Briefly describe the structure of this document, enumerating what does each chapter and section stands for. For instance in this work in Chapter \ref{chap:background} the guidance in structuring the literature review is given. Chapter \ref{chap:problem} describes the main requirements for the problem definition and so on ...
+%This section is quite formulaic. Briefly describe the structure of this document, enumerating what does each chapter and section stands for. For instance in this work in Chapter \ref{chap:background} the guidance in structuring the literature review is given. Chapter \ref{chap:problem} describes the main requirements for the problem definition and so on ...
+This document will be broken down into five chapters.
+
+Chapter 1, as just read, introduces the project and defines the motivation behind doing it. It also breaks down the core software development technique's that will be used. 
+
+Chapter 2, we will be reviewing what has been done before to get a better understanding of the approach we are going to take. We will also be looking at translation management systems in a whole to get an understanding of what our application will be working with. 
+
+Chapter 3, defines the problem of current system while also stating the objectives that will be achieved upon project completion. The functional and non-function requirements are also stated in this chapter. This chapter is based around what must be done.
+
+Chapter 4, is based around how the project will be achieved. Here we introduces the implementation approach to the project. It states the architecture and programming technologies that will be used. Defines the risk of the project. While also providing a schedule and finally a prototype.
+
+Chapter 5, enumerates all the things that would be done if given more time and reflects on any problems encountered. 
